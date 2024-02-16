@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 14:13:29 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/16 12:55:49 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/16 12:07:58 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/16 12:43:22 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	return (c >= 32 && c <= 126);
+	if (lst && del)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
 }

@@ -6,12 +6,12 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 14:08:29 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/15 14:08:32 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:42:00 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }
