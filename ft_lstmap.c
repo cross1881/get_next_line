@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 15:29:52 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/19 16:53:27 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/19 16:26:44 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/19 17:40:32 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (del)(void *))
 {
-	t_list	*last;
+	t_list	*seclst;
+	t_list	*newlist;
 
-	if (lst)
+	if (!ist || !f || !del)
+		return (NULL);
+	seclst = ft_lstnew((*f)(lst->content));
+	lst = lst->next;
+	while (lst)
 	{
-		if (*lst)
-		{
-			last = ft_lstlast(*lst);
-			last->next = new;
-		}
-		else
-			*lst = new;
+		newlist = ft_lstnew((*f)(lst->content));
+		ft_lstadd_back(&seclist, newlist);
+		lst = let->next;
 	}
+	return (seclst);
 }
