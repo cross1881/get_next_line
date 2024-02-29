@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 02:07:15 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/29 11:56:25 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/28 19:09:36 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/28 19:43:20 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *small, size_t len)
 {
-	while (*s && *s == (unsigned char)c)
-		s++;
-	if (*s && *s == c)
-		return ((char *)s);
-	return (NULL);
-}
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (!small)
+		return (big)
