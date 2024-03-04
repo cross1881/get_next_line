@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 17:57:08 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/24 18:11:37 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:53:59 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (n < 0)
 	{
-		ft_putchar_fd("-", fd);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
 	while (n > 10)

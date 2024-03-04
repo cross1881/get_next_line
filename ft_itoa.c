@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 14:15:02 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/16 12:52:47 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:26:34 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -30,7 +30,7 @@ int	ft_ncifre(int n)
 	return (i);
 }
 
-char	ft_conv(char *str, int n)
+char	*ft_conv(char *str, int n)
 {
 	if (n < 0)
 	{
@@ -43,10 +43,10 @@ char	ft_conv(char *str, int n)
 		n /= 10;
 	}
 	str += 48 + (n % 10);
-	return (str);
+	return ((char *)str);
 }
 
-int	*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;

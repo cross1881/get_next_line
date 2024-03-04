@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:28:42 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/28 19:38:14 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:21:08 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,6 +26,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dlen++;
 		src++;
 	}
-	*(dst + dlen) + '\0';
-	return (i + slen);
+	*(dst + dlen) = '\0';
+	return (slen);
 }

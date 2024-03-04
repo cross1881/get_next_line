@@ -6,12 +6,12 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 02:07:15 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/29 11:56:25 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:32:40 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s == (unsigned char)c)
 		s++;
