@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:30:05 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/04 14:31:10 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:33:39 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,8 +22,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	{
 		while (n)
 		{
-			d[n] = s[n];
 			n--;
+			d[n] = s[n];
 		}
 		return (d);
 	}

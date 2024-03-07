@@ -6,26 +6,29 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:28:11 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/04 14:51:24 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:12:53 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	int		dstlen;
-	char	*d;
-	char	*s;
+	size_t	i;
 
-	d = (char *)dst;
-	s = (char *)src;
-	dstlen = strlen(dst);
+	i = 0;
 	if (dst && src)
 	{
-		while (n)
+		if (dst > src)
+			return (ft_memcpy(dst, src, n));
+		else
 		{
-			d[dstlen + n] = s[n];
-			n--;
+			while (n)
+			{
+				n--;
+				*(char *)(dst + i) = *(char *)src;
+				i++;
+				src++;
+			}
 		}
 		return (dst);
 	}

@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:10:54 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/04 14:47:34 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:43:42 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(char *)(s + i)= 0;
+		*(char *)(s + i) = 0;
 		i++;
 	}
 }
