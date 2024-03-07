@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 14:15:02 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/04 14:26:34 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:30:28 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,18 +32,26 @@ int	ft_ncifre(int n)
 
 char	*ft_conv(char *str, int n)
 {
+	int d;
+
 	if (n < 0)
 	{
 		str[0] = '-';
 		n *= -1;
+		str++;
 	}
-	while (n > 10)
+	d = 1;
+	while (n / d >= 10)
+		d *= 10;
+	while (d != 10)
 	{
-		str += 48 + (n % 10);
-		n /= 10;
+		*str = 48 + (n / d);
+		str++;
+		n %= d;
+		d /= 10;
 	}
-	str += 48 + (n % 10);
-	return ((char *)str);
+	*str = '\0';
+	return (str);
 }
 
 char	*ft_itoa(int n)
