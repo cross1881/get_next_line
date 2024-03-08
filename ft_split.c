@@ -6,59 +6,58 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:19:05 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/07 12:53:25 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/08 19:43:44 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	**ft_fill_split(char **substring, const char *s, char c)
+static size_t	ft_count(const char *s, char c)
 {
-	char	*str;
+	size_t	count;
 	size_t	i;
-	size_t	index;
-	size_t	start;
 
-	start = 0;
-	index = 0;
 	i = 0;
+	count = 0;
+	while (s[i] == c)
+		i++;
 	while (s[i])
 	{
-		while (s[i] != c || s[i])
+		if (s[i] != c)
 		{
-			i++;
-			if (s[i] == c || i == ft_strlen(s))
-				str = (char *)malloc(sizeof(char) * (i - start + 1));
-			if (!str)
-				return (NULL);
-			while (++start < i)
-				str[start] = s[start];
-			str[start] = '\0';
-			substring[index++] = str;
+			++count;
+			while (s[i] && s[i] != c)
+				++i;
 		}
+		else
+			i++;
 	}
-	substring[index] = NULL;
-	return (substring);
+	return (count);
 }
 
-char	**split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int		len;
-	int		nstring;
-	int		i;
 	char	**substring;
+	size_t	i;
+	size_t	j;
 
-	nstring = 0;
-	len = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	substring = malloc(sizeof (char *) * (ft_count(s, c) + 1));
 	i = 0;
-	while (i < len)
-	{
-		if (s[i] == c)
-			nstring++;
-		i++;
-	}
-	substring = malloc(sizeof(char *) * (nstring + 2));
 	if (!substring)
 		return (NULL);
-	ft_fill_split(substring, s, c);
+	while (*s)
+	{
+		if (*s != c)
+		{
+			j = 0;
+			while (*s && *s != c && ++j)
+				++s;
+			substring[i++] = ft_substr(s - j, 0, j);
+		}
+		else
+			++s;
+	}
+	substring[i] = 0;
 	return (substring);
 }

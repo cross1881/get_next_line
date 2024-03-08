@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 10:37:31 by mrossett          #+#    #+#             */
-/*   Updated: 2024/03/04 14:22:23 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:19:05 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,6 +16,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*estract;
 	size_t	slen;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));

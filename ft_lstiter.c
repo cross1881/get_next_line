@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 13:27:39 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/16 13:27:47 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:14:34 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		while (lst)
 		{
 			(*f)(lst->content);
-			lst->next;
+			lst = lst->next;
 		}
 	}
 }

@@ -6,21 +6,18 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:29:52 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/19 16:53:27 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/03/08 21:01:20 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
-
-	if (lst)
+	if (lst && new)
 	{
 		if (*lst)
 		{
-			last = ft_lstlast(*lst);
-			last->next = new;
+			ft_lstlast(*lst)->next = new;
 		}
 		else
 			*lst = new;
