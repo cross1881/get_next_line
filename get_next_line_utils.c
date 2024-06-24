@@ -6,7 +6,7 @@
 /*   By: mrossett <mrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:46:22 by mrossett          #+#    #+#             */
-/*   Updated: 2024/06/18 21:33:36 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/06/24 13:28:23 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_strdup(char *s)
 	str[i] = '\0';
 	return (str);
 }
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
@@ -63,6 +64,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	str[i + j] = '\0';
 	return (str);
 }
+
 char	*ft_strchr(char *s, int i)
 {
 	while (*s)
@@ -75,6 +77,7 @@ char	*ft_strchr(char *s, int i)
 		return ((char *)s);
 	return (0);
 }
+
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	size_t	i;

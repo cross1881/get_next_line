@@ -6,7 +6,7 @@
 /*   By: mrossett <mrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:45:21 by mrossett          #+#    #+#             */
-/*   Updated: 2024/06/18 21:28:49 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/06/24 13:30:23 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-size_t  ft_strlen(char *str);
+size_t	ft_strlen(char *str);
 char	*ft_strdup(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
